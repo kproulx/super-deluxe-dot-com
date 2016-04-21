@@ -15,7 +15,7 @@
 
  body {background-color: #fff; font: 1.4em "Apercu", sans-serif; margin: 0; color:#1B20E8;}
 
- #border {margin:40px; padding:40px 40px 200px 40px; z-index:1000; background:transparent; position:relative; 
+ #border {margin:40px; padding:40px 40px 180px 40px; z-index:1000; background:transparent; position:relative; 
 
     border: 20px solid transparent;
 
@@ -24,23 +24,33 @@
     border-image: linear-gradient(to bottom, #1B20E8 0%, #1b163a 100%);
 
     border-image-slice: 2;
-    margin-bottom:-242px;
+    margin-bottom:-250px;
 
 }
 
-#intro {width:70%; margin:auto;}
+#intro {width:75%; margin:auto; margin-bottom:100px;}
 
-#container {max-width:1166px; margin:auto; text-align:center;}
+#container {max-width:1166px; margin:auto; text-align:center; padding:0 40px;}
 
 nav {position:relative; top:-100px;}
 ul {list-style-type: none; margin:0; padding:0;}
 nav .left {float:left;}
-nav .right {float:right; margin-left:40px;}
+nav .right {float:right; margin-left:20px;}
 
 
 
-#youtube {margin:100px 40px 100px 0; padding:40px; height:500px; color:#fff; position:relative;cursor: pointer;
-background:     
+#youtube {padding:40px; color:#fff; position:relative;cursor: pointer;}
+
+
+
+
+
+div.stretchy-wrapper {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 */
+    position: relative;
+
+    background:     
 linear-gradient(
       rgba(255, 113, 156, 0.80), 
       rgba(255, 113, 156, 0.80)
@@ -51,6 +61,19 @@ background-size:100%; background-position:center center;
 -moz-box-shadow: 40px 40px 0px 0px  #FF004E;
 box-shadow: 40px 40px 0px 0px  #FF004E;
 }
+
+div.stretchy-wrapper > #youtube {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+/* Other aspect ratios to try:
+ * 56.25% = 16:9
+ * 75% = 4:3
+ * 66.66% = 3:2
+ * 62.5% = 8:5
+ */
+
 
 #youtube:hover .circle {border:20px solid #FF004E;}
 #youtube:hover .circle_inner:before {border-color: transparent transparent transparent #FF004E;}
@@ -63,7 +86,6 @@ box-shadow: 40px 40px 0px 0px  #FF004E;
 
 
 .icon {width:20px;}
-
 
 
 
@@ -100,13 +122,24 @@ box-shadow: 40px 40px 0px 0px  #FF004E;
 
 h1 {font-size:1.5em;}
 
-#series {float:left; width:40%; margin:40px 40px 40px 0; padding:40px;}
+#series {float:left; margin:140px 40px 40px 0; padding:40px 40px 40px 170px;}
 
     #series li {font-size:1.5em; padding:8px;}
 
 
-#ig {color:#fff; float:right; padding:30px; margin-top:140px; margin-right:80px; width:400px; height:400px; position:relative;
-cursor: pointer;
+
+
+
+
+
+div.gram-wrapper {
+    width: 39%;
+    padding-bottom: 39%; /* 16:9 */
+    position: relative;
+    float:right;
+    margin-top:290px;
+    margin-right:80px;
+
 background:     
 linear-gradient(
       rgba(255,100,0,.80), 
@@ -116,7 +149,18 @@ url('assets/instagram.jpg');
 background-size:100%; background-position:center center;
 -webkit-box-shadow: 40px 40px 0px 0px #FF3300;
 -moz-box-shadow: 40px 40px 0px 0px  #FF3300;
-box-shadow: 40px 40px 0px 0px  #FF3300;}
+box-shadow: 40px 40px 0px 0px  #FF3300;
+}
+
+div.gram-wrapper > #ig {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+
+#ig {color:#fff; padding:40px; position:relative;
+cursor: pointer;
+}
 
 #ig .time {bottom:40px; position:absolute; margin:0 auto; width:88%;}
 
@@ -128,6 +172,24 @@ background-size:100%; background-position:center center;
 
 }
 
+#ig:hover .desc {display:none;}
+
+#ig:hover a {display:none;}
+
+#ig:hover img {display:none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #tech {background-color:#1B20E8; color:#fff; float:left; padding:80px; margin:200px 80px 200px 100px; clear:left;
 -webkit-box-shadow: 40px 40px 0px 0px #1B163A;
 -moz-box-shadow: 40px 40px 0px 0px  #1B163A;
@@ -136,7 +198,7 @@ box-shadow: 40px 40px 0px 0px  #1B163A;
 
     #tech li {padding:8px;}
 
-#twitter {clear:right; padding:40px; width:30%; float:right; margin-top:200px; margin-right:80px;}
+#twitter {clear:right; padding:40px; width:30%; float:left; margin-top:200px; margin-left:80px;}
 
 .time {margin-top:30px;font-size:.8em;}
 
@@ -171,8 +233,10 @@ a:active {
 
 #clear {clear:both;}
  
- #footer {background-color:#1B20E8; color:#fff; padding:60px 100px 100px 100px; z-index:-1000; position:relative; font-size:.8em;}
+ #footer {background-color:#1B20E8; color:#fff; padding:60px 100px 60px 100px; z-index:-1000; position:relative; font-size:.8em;}
 
 
-#footerleft {float:left;width:50%; padding-top:90px; text-align:left;}
-#footerright {float:left; width:50%; text-align:right;}
+#footerleft {float:left;width:50%; padding-top:90px; text-align:left; color:#ffffff; }
+#footerright {float:left; width:50%; text-align:right; color:#fff;}
+
+
